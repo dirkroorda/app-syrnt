@@ -154,15 +154,11 @@ class TfApp(object):
     eoslots = E.oslots.data
 
     bigType = False
-    if d.condenseType is not None and otypeRank[nType] > otypeRank[d.condenseType]:
+    if nType in SECTION:
+      if d.condenseType is None or otypeRank[nType] > otypeRank[d.condenseType]:
+        bigType = True
+    elif d.condenseType is not None and otypeRank[nType] > otypeRank[d.condenseType]:
       bigType = True
-
-    if nType == 'book':
-      html.append(app.webLink(n, _asString=True))
-      return
-    if nType == 'chapter':
-      html.append(app.webLink(n, _asString=True))
-      return
 
     if bigType:
       children = ()
@@ -172,6 +168,8 @@ class TfApp(object):
       children = ()
     elif nType == slotType:
       children = ()
+    else:
+      children = L.d(n, otype='word')
 
     (hlClass, hlStyle) = hlAtt
 
@@ -181,13 +179,20 @@ class TfApp(object):
 
     html.append(f'<div class="{className} {boundaryClass} {hlClass}" {hlStyle}>')
 
-    if nType == 'verse':
+    if nType in SECTION:
       passage = app.webLink(n, _asString=True)
+      featurePart = getFeatures(
+          app,
+          n,
+          (),
+          **options,
+      )
       html.append(
           f'''
     <div class="vl">
         <div class="vrs">{passage}</div>
         {nodePart}
+        {featurePart}
     </div>
 '''
       )
