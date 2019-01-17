@@ -5,7 +5,7 @@ from tf.applib.highlight import hlText, hlRep
 from tf.applib.api import setupApi
 from tf.applib.links import outLink
 
-PLAIN_LINK = ('https://github.com/{org}/{repo}/blob/master' '/source/{version}/{book}')
+PLAIN_LINK = ('https://github.com/{org}/{repo}/blob/master' '/plain/{version}/{book}')
 
 SECTION = {'book', 'chapter', 'verse'}
 VERSE = {'verse'}
