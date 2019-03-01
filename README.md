@@ -1,4 +1,4 @@
-![logo](tutorial/images/logo.png)
+![logo](code/static/logo.png)
 
 # SyrNT
 
@@ -8,6 +8,8 @@ for working with the
 [SyrNT](https://github.com/ETCBC/syrnt) corpus: the Syriac New Testament.
 
 Get started with the
-[tutorial](https://nbviewer.jupyter.org/github/annotation/app-syrnt/blob/master/tutorial/start.ipynb).
+[tutorial](https://nbviewer.jupyter.org/github/annotation/tutorials/blob/master/syrnt/start.ipynb).
 
 It offers this [API](https://annotation.github.io/text-fabric/Api/App/).
+
+![shot](images/shot.png)
