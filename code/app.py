@@ -1,4 +1,4 @@
-from tf.core.helpers import htmlEsc, mdEsc
+from tf.core.helpers import mdhtmlEsc, htmlEsc
 from tf.applib.helpers import dh
 from tf.applib.display import prettyPre, getFeatures
 from tf.applib.highlight import hlText, hlRep
@@ -78,13 +78,13 @@ class TfApp(object):
     if nType == 'word':
       rep = hlText(app, [n], d.highlights, fmt=d.fmt)
     elif nType in SECTION:
-      if secLabel:
+      if secLabel and d.withPassage:
         label = ('{}' if nType == 'book' else '{} {}' if nType == 'chapter' else '{} {}:{}')
         rep = label.format(*T.sectionFromNode(n))
       else:
         rep = ''
       isText = False
-      rep = mdEsc(htmlEsc(rep))
+      rep = mdhtmlEsc(rep)
       rep = hlRep(app, rep, n, d.highlights)
       if nType in VERSE:
         if isLinked:
@@ -94,7 +94,7 @@ class TfApp(object):
         rep += hlText(app, L.d(n, otype="word"), d.highlights, fmt=d.fmt)
         isText = True
     elif nType == 'lex':
-      rep = mdEsc(htmlEsc(F.lexeme.v(n)))
+      rep = mdhtmlEsc(F.lexeme.v(n))
       rep = hlRep(app, rep, n, d.highlights)
     else:
       rep = hlText(app, L.d(n, otype='word'), d.highlights, fmt=d.fmt)

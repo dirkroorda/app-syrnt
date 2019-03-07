@@ -73,6 +73,8 @@ FONT_NAME = 'Estrangelo Edessa'
 FONT = 'SyrCOMEdessa.otf'
 FONTW = 'SyrCOMEdessa.woff'
 
+TEXT_FORMATS = {}
+
 BROWSE_NAV_LEVEL = 2
 BROWSE_CONTENT_PRETTY = False
 
