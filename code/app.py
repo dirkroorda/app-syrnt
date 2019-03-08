@@ -155,10 +155,7 @@ class TfApp(object):
     isHtml = options.get('fmt', None) in app.textFormats
 
     bigType = False
-    if nType in SECTION:
-      if d.condenseType is None or otypeRank[nType] > otypeRank[d.condenseType]:
-        bigType = True
-    elif d.condenseType is not None and otypeRank[nType] > otypeRank[d.condenseType]:
+    if d.condenseType is not None and otypeRank[nType] > otypeRank[d.condenseType]:
       bigType = True
 
     if bigType:
