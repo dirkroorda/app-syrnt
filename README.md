@@ -2,7 +2,7 @@
 
 # SyrNT
 
-[![sha](sha.png) Software Heritage Archive](https://archive.softwareheritage.org/browse/origin/https://github.com/annotation/app-syrnt/)
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/annotation/app-syrnt/)](https://archive.softwareheritage.org/browse/origin/https://github.com/annotation/app-syrnt/)
 
 [![DOI](https://zenodo.org/badge/161639573.svg)](https://zenodo.org/badge/latestdoi/161639573)
 
