@@ -76,22 +76,37 @@ CHILD_TYPE = dict(book="chapter", chapter="verse", verse="word")
 
 SUPER_TYPE = None
 
-PLAIN_TYPES = None
-
-PRETTY_TYPES = dict(
-    book=("{book}", "", ""),
-    chapter=("{chapter}", "", ""),
-    verse=("{verse}", "", ""),
-    word=(True, "", "sp vs vt"),
-    lex=(True, "", ""),
-)
-
-LEVELS = dict(
-    book=dict(level=3, flow="col", wrap=False, stretch=False),
-    chapter=dict(level=3, flow="col", wrap=False, strectch=False),
-    verse=dict(level=2, flow="col", wrap=False, strectch=False),
-    lex=dict(level=1, flow="col", wrap=False, strectch=False),
-    word=dict(level=0, flow="col", wrap=False, strectch=False),
+TYPE_DISPLAY = dict(
+    book=dict(
+        template="{book}",
+        bareFeatures="",
+        features="",
+        level=3, flow="col", wrap=False, stretch=False,
+    ),
+    chapter=dict(
+        template="{chapter}",
+        bareFeatures="",
+        features="",
+        level=3, flow="col", wrap=False, strectch=False,
+    ),
+    verse=dict(
+        template="{verse}",
+        bareFeatures="",
+        features="",
+        level=2, flow="col", wrap=False, strectch=False,
+    ),
+    lex=dict(
+        template=True,
+        bareFeatures="",
+        features="",
+        level=1, flow="col", wrap=False, strectch=False,
+    ),
+    word=dict(
+        template=True,
+        bareFeatures="sp",
+        features="vs vt",
+        level=0, flow="col", wrap=False, strectch=False,
+    ),
 )
 
 INTERFACE_DEFAULTS = dict()
