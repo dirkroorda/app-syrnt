@@ -26,11 +26,6 @@ MODULE_SPECS = ()
 
 ZIP = [REPO]
 
-BASE_TYPE = "word"
-CONDENSE_TYPE = "verse"
-
-NONE_VALUES = {None, "NA", "none", "unknown"}
-
 STANDARD_FEATURES = """
     word word_etcbc
     sp vs vt
@@ -38,10 +33,6 @@ STANDARD_FEATURES = """
     book book@en
     chapter verse
 """.strip().split()
-
-EXCLUDED_FEATURES = set()
-
-NO_DESCEND_TYPES = {"lex"}
 
 EXAMPLE_SECTION = (
     f"<code>Matthew 1:1</code> (use"
@@ -51,60 +42,47 @@ EXAMPLE_SECTION = (
 )
 EXAMPLE_SECTION_TEXT = "Matthew 1:1"
 
-SECTION_SEP1 = " "
-SECTION_SEP2 = ":"
-
-WRITING = "syc"
-WRITING_DIR = "rtl"
-
-FONT_NAME = "Estrangelo Edessa"
-FONT = "SyrCOMEdessa.otf"
-FONTW = "SyrCOMEdessa.woff"
-
-TEXT_FORMATS = {}
-
-BROWSE_NAV_LEVEL = 2
-BROWSE_CONTENT_PRETTY = False
-
-VERSE_TYPES = None
-
-LEX = dict(typ="lexeme", feat="lexeme", cls="lex", target="word")
-
-TRANSFORM = None
-
-CHILD_TYPE = dict(book="chapter", chapter="verse", verse="word")
-
-SUPER_TYPE = None
+DATA_DISPLAY = dict(
+    noneValues={None, "NA", "none", "unknown"},
+    sectionSep1=" ",
+    sectionSep2=":",
+    writing="syc",
+    writingDir="rtl",
+    fontName="Estrangelo Edessa",
+    font="SyrCOMEdessa.otf",
+    fontw="SyrCOMEdessa.woff",
+    textFormats={},
+    browseNavLevel=2,
+    browseContentPretty=False,
+)
 
 TYPE_DISPLAY = dict(
     book=dict(
         template="{book}",
-        bareFeatures="",
-        features="",
+        children="chapter",
         level=3, flow="col", wrap=False, stretch=False,
     ),
     chapter=dict(
         template="{chapter}",
-        bareFeatures="",
-        features="",
+        children="verse",
         level=3, flow="col", wrap=False, strectch=False,
     ),
     verse=dict(
         template="{verse}",
-        bareFeatures="",
-        features="",
+        children="word",
+        condense=True,
         level=2, flow="col", wrap=False, strectch=False,
     ),
-    lex=dict(
-        template=True,
-        bareFeatures="",
-        features="",
+    lexeme=dict(
+        template="{lexeme}",
+        lexTarget="word",
         level=1, flow="col", wrap=False, strectch=False,
     ),
     word=dict(
         template=True,
-        bareFeatures="sp",
+        featuresBare="sp",
         features="vs vt",
+        base=True,
         level=0, flow="col", wrap=False, strectch=False,
     ),
 )
