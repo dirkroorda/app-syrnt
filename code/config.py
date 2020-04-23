@@ -42,49 +42,11 @@ EXAMPLE_SECTION = (
 )
 EXAMPLE_SECTION_TEXT = "Matthew 1:1"
 
-DATA_DISPLAY = dict(
-    noneValues={None, "NA", "none", "unknown"},
-    sectionSep1=" ",
-    sectionSep2=":",
-    writing="syc",
-    writingDir="rtl",
-    fontName="Estrangelo Edessa",
-    font="SyrCOMEdessa.otf",
-    fontw="SyrCOMEdessa.woff",
-    textFormats={},
-    browseNavLevel=2,
-    browseContentPretty=False,
-)
+DATA_DISPLAY = dict(noneValues={None, "NA", "none", "unknown"}, writing="syc",)
 
 TYPE_DISPLAY = dict(
-    book=dict(
-        template="{book}",
-        children="chapter",
-        level=3, flow="col", wrap=False, stretch=False,
-    ),
-    chapter=dict(
-        template="{chapter}",
-        children="verse",
-        level=3, flow="col", wrap=False, strectch=False,
-    ),
-    verse=dict(
-        template="{verse}",
-        children="word",
-        condense=True,
-        level=2, flow="col", wrap=False, strectch=False,
-    ),
-    lexeme=dict(
-        template="{lexeme}",
-        lexTarget="word",
-        level=1, flow="col", wrap=False, strectch=False,
-    ),
-    word=dict(
-        template=True,
-        featuresBare="sp",
-        features="vs vt",
-        base=True,
-        level=0, flow="col", wrap=False, strectch=False,
-    ),
+    lexeme=dict(template="{lexeme}", lexTarget="word",),
+    word=dict(featuresBare="sp", features="vs vt",),
 )
 
 INTERFACE_DEFAULTS = dict()
