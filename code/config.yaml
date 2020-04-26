@@ -1,0 +1,29 @@
+apiVersion: 1
+dataDisplay:
+  noneValues:
+  - none
+  - unknown
+  - null
+  - NA
+  writing: syc
+docs:
+  docPage: transcription
+  featureBase: '{docBase}/transcription-{version}{docExt}'
+  featurePage: ''
+interfaceDefaults: {}
+provenanceSpec:
+  corpus: SyrNT
+  doi: 10.5281/zenodo.1464787
+  org: etcbc
+  repo: syrnt
+  version: '0.1'
+  webBase: '{ghUrl}/{org}/{repo}/blob/master/plain/'
+  webHint: show this passage in the SyrNT repository
+  webUrl: '{version}/<1>.txt'
+typeDisplay:
+  lexeme:
+    lexOcc: word
+    template: '{lexeme}'
+  word:
+    features: vs vt
+    featuresBare: sp
