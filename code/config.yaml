@@ -5,7 +5,6 @@ dataDisplay:
   - unknown
   - null
   - NA
-  writing: syc
 docs:
   docPage: transcription
   featureBase: '{docBase}/transcription-{version}{docExt}'
@@ -27,3 +26,4 @@ typeDisplay:
   word:
     features: vs vt
     featuresBare: sp
+writing: syc
